@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { FlexSampleComponent } from './flex-sample/flex-sample.component';
+import { BlockComponent } from './block/block.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FlexSampleComponent
+    FlexSampleComponent,
+    BlockComponent
   ],
   imports: [
     BrowserModule,
