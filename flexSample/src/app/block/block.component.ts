@@ -10,6 +10,13 @@ export class BlockComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    // base on the width and height to draw the block
+  }
+
+
+  generateBlockColor(){
+    
   }
 
 }
