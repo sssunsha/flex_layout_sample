@@ -1,21 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, Renderer } from '@angular/core';
 
 @Component({
   selector: 'app-block',
   templateUrl: './block.component.html',
-  styleUrls: ['./block.component.css'],
-  styles:['background-color: #ff8080;']
+  styleUrls: ['./block.component.css']
 })
-export class BlockComponent implements OnInit {
+export class BlockComponent implements OnInit, AfterViewInit  {
 
   color:string;
+  @ViewChild('block') block: ElementRef;
 
-  constructor() { }
+  constructor(private renderer: Renderer) { }
 
   ngOnInit() {
 
     // base on the width and height to draw the block
     this.generateBlockColor();
+    console.log(`block ngOnInit ...`);
+  }
+
+  ngAfterViewInit(){
+    console.log(`block ngAfterViewInit ...`);
+    console.log(this.block);
+    this.renderer.setElementStyle(this.block.nativeElement, "background-color", this.color);
   }
 
 
